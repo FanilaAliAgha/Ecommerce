@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 import 'package:flutter/material.dart';
+import 'package:newapp/Screens/bottomnav.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -8,13 +9,30 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      extendBody: true,
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButton: Fbutton(),
+      bottomNavigationBar: Nav(),
+      // appBar: AppBar(),
       body: Container(
         height: 830,
         child: ListView(scrollDirection: Axis.vertical, children: [
           SizedBox(height: 10),
           Container(
+            height: 40,
+            child: Center(
+              child: Text(
+                "SAPPHIRE",
+                style: TextStyle(
+                    color: Colors.purple[800],
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22),
+              ),
+            ),
+          ),
+          Container(
             height: 70,
-            decoration: BoxDecoration(color: Colors.limeAccent[100]),
+            // decoration: BoxDecoration(color: Colors.limeAccent[100]),
             child: Row(
               children: [
                 Container(
@@ -90,7 +108,7 @@ class Dashboard extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Container(
-            decoration: BoxDecoration(color: Colors.purple[100]),
+            //decoration: BoxDecoration(color: Colors.purple[100]),
             margin: EdgeInsets.only(left: 14, right: 14),
             width: size.width * 0.9,
             height: 110,
@@ -132,7 +150,7 @@ class Dashboard extends StatelessWidget {
           SizedBox(height: 10),
           Container(
             height: 40,
-            decoration: BoxDecoration(color: Colors.pink[100]),
+            // decoration: BoxDecoration(color: Colors.pink[100]),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
@@ -147,7 +165,7 @@ class Dashboard extends StatelessWidget {
           ),
           Container(
             height: 140,
-            decoration: BoxDecoration(color: Colors.deepOrange[100]),
+            // decoration: BoxDecoration(color: Colors.deepOrange[100]),
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[
@@ -346,7 +364,7 @@ class Dashboard extends StatelessWidget {
           ),
           Container(
             height: 40,
-            decoration: BoxDecoration(color: Colors.purple[100]),
+            //decoration: BoxDecoration(color: Colors.purple[100]),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
@@ -360,7 +378,7 @@ class Dashboard extends StatelessWidget {
           ),
           Container(
             height: 190,
-            decoration: BoxDecoration(color: Colors.redAccent[100]),
+            // decoration: BoxDecoration(color: Colors.redAccent[100]),
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[
@@ -561,7 +579,7 @@ class Dashboard extends StatelessWidget {
           ),
           Container(
             height: 40,
-            decoration: BoxDecoration(color: Colors.grey[200]),
+            //decoration: BoxDecoration(color: Colors.grey[200]),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
@@ -575,7 +593,7 @@ class Dashboard extends StatelessWidget {
           ),
           Container(
             height: 230,
-            decoration: BoxDecoration(color: Colors.indigo[100]),
+            // decoration: BoxDecoration(color: Colors.indigo[100]),
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[

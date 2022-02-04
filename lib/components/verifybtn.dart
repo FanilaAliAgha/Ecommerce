@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:newapp/Screens/Otp/opt.dart';
 
 import '../constants.dart';
 
-class SRoundBtn extends StatelessWidget {
+class VerifyBtn extends StatelessWidget {
   final String text;
   // final Function press;
   final Color color, textcolor;
-  const SRoundBtn({
+  const VerifyBtn({
     Key? key,
     required this.text,
     // required this.press,
@@ -20,22 +19,22 @@ class SRoundBtn extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
-      width: size.width * 0.4,
+      width: size.width * 0.3,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
         child: FlatButton(
           color: kPrimaryColor,
           padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  // ignore: prefer_const_constructors
-                  return OtpScreen();
-                },
-              ),
-            );
+            //   Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //       builder: (context) {
+            //         // ignore: prefer_const_constructors
+            //         return ();
+            //       },
+            //     ),
+            //   );
           },
           child: Text(
             text,
