@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
-
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
@@ -10,18 +9,20 @@ class Dashboard extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        height: 600,
+        height: 830,
         child: ListView(scrollDirection: Axis.vertical, children: [
+          SizedBox(height: 10),
           Container(
-            height: 50,
+            height: 70,
             decoration: BoxDecoration(color: Colors.limeAccent[100]),
             child: Row(
               children: [
                 Container(
-                  height: 40,
-                  width: size.width * 0.6,
+                  margin: EdgeInsets.only(left: 5, right: 5),
+                  height: 60,
+                  width: size.width * 0.65,
                   child: Card(
-                    margin: EdgeInsets.symmetric(horizontal: 20),
+                    // margin: EdgeInsets.symmetric(horizontal: 20),
                     elevation: 3,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
@@ -40,14 +41,17 @@ class Dashboard extends StatelessWidget {
                 ),
                 // ignore: sized_box_for_whitespace
                 Container(
-                  height: 40,
-                  width: size.width * 0.2,
+                  height: 60,
+                  width: size.width * 0.15,
                   child: Card(
-                    margin: EdgeInsets.symmetric(horizontal: 20),
+                    // margin: EdgeInsets.symmetric(horizontal: 20),
                     elevation: 3,
                     // icon:ICons.shopp
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: Icon(
+                      Icons.shopping_cart,
                     ),
 
                     // child: TextFormField(
@@ -60,15 +64,17 @@ class Dashboard extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: 40,
-                  width: size.width * 0.2,
+                  height: 60,
+                  margin: EdgeInsets.only(left: 5),
+                  width: size.width * 0.15,
                   child: Card(
-                    margin: EdgeInsets.symmetric(horizontal: 20),
+                    //margin: EdgeInsets.symmetric(horizontal: 20),
                     elevation: 3,
                     // icon:ICons.shopp
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(25),
                     ),
+                    child: Icon(Icons.notifications),
 
                     // child: TextFormField(
                     //   decoration: InputDecoration(
@@ -82,66 +88,692 @@ class Dashboard extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: 10),
           Container(
-            height: 90,
             decoration: BoxDecoration(color: Colors.purple[100]),
+            margin: EdgeInsets.only(left: 14, right: 14),
+            width: size.width * 0.9,
+            height: 110,
+            child: Card(
+              elevation: 3,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              color: Colors.purple[800],
+              child: Center(
+                child: Column(
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 20, bottom: 15, right: 15, left: 15),
+                      child: Center(
+                        child: Text(
+                          "A SUPER SUMMER SALE!",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18),
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "UPTO 70% OFF",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
+          SizedBox(height: 10),
           Container(
-            height: 90,
+            height: 40,
             decoration: BoxDecoration(color: Colors.pink[100]),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Categories",
+                textAlign: TextAlign.end,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
           ),
           Container(
-            height: 90,
+            height: 140,
             decoration: BoxDecoration(color: Colors.deepOrange[100]),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 100,
+                        width: 100,
+                        child: Card(
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => Categories()))
+                          //   },
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                      // ),
+                      Text(
+                        'New In',
+                        style: TextStyle(
+                            fontSize: 16.0, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 100,
+                        width: 100,
+                        child: Card(
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          margin: EdgeInsets.all(10),
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Man',
+                        style: TextStyle(
+                            fontSize: 16.0, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 100,
+                        width: 100,
+                        child: Card(
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          margin: EdgeInsets.all(10),
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Woman',
+                        style: TextStyle(
+                            fontSize: 16.0, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 100,
+                        width: 100,
+                        child: Card(
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          margin: EdgeInsets.all(10),
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Kids',
+                        style: TextStyle(
+                            fontSize: 16.0, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 100,
+                        width: 100,
+                        child: Card(
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          margin: EdgeInsets.all(10),
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Fragrances',
+                        style: TextStyle(
+                            fontSize: 16.0, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 100,
+                        width: 100,
+                        child: Card(
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          margin: EdgeInsets.all(10),
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Beauty',
+                        style: TextStyle(
+                            fontSize: 16.0, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 100,
+                        width: 100,
+                        child: Card(
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          margin: EdgeInsets.all(10),
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Acessories',
+                        style: TextStyle(
+                            fontSize: 16.0, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
           Container(
-            height: 90,
+            height: 40,
             decoration: BoxDecoration(color: Colors.purple[100]),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Specially For You",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
           ),
           Container(
-            height: 90,
+            height: 190,
             decoration: BoxDecoration(color: Colors.redAccent[100]),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 8.0, bottom: 8.0, right: 8.0, left: 6.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 170,
+                        width: 280,
+                        margin: EdgeInsets.only(right: 6, left: 6),
+                        child: Card(
+                          color: Colors.yellow[50],
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+
+                          margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => Categories()))
+                          //   },
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(right: 6.0, bottom: 8.0, top: 8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 170,
+                        width: 280,
+                        margin: EdgeInsets.only(left: 6),
+                        child: Card(
+                          color: Colors.blueAccent[50],
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+
+                          margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => Categories()))
+                          //   },
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(right: 6.0, bottom: 8.0, top: 8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 170,
+                        width: 280,
+                        margin: EdgeInsets.only(left: 6),
+                        child: Card(
+                          color: Colors.green[100],
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+
+                          margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => Categories()))
+                          //   },
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(right: 6.0, bottom: 8.0, top: 8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 170,
+                        width: 280,
+                        margin: EdgeInsets.only(left: 6),
+                        child: Card(
+                          color: Colors.teal[100],
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+
+                          margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => Categories()))
+                          //   },
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(right: 6.0, bottom: 8.0, top: 8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 170,
+                        width: 280,
+                        margin: EdgeInsets.only(left: 6),
+                        child: Card(
+                          color: Colors.lightGreen[100],
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+
+                          margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => Categories()))
+                          //   },
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(right: 6.0, bottom: 8.0, top: 8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 170,
+                        width: 280,
+                        margin: EdgeInsets.only(left: 6),
+                        child: Card(
+                          color: Colors.purple[100],
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+
+                          margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => Categories()))
+                          //   },
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
           Container(
-            height: 90,
-            decoration: BoxDecoration(color: Colors.grey[100]),
+            height: 40,
+            decoration: BoxDecoration(color: Colors.grey[200]),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Popular Products",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
           ),
           Container(
-            height: 90,
+            height: 230,
             decoration: BoxDecoration(color: Colors.indigo[100]),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 8.0, bottom: 8.0, left: 8.0, right: 6.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 210,
+                        width: 220,
+                        margin: EdgeInsets.only(right: 8, left: 8),
+                        child: Card(
+                          color: Colors.green[50],
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+
+                          margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => Categories()))
+                          //   },
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 6.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 210,
+                        width: 220,
+                        margin: EdgeInsets.only(right: 8, left: 8),
+                        child: Card(
+                          color: Colors.green[50],
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+
+                          margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => Categories()))
+                          //   },
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 6.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 210,
+                        width: 220,
+                        margin: EdgeInsets.only(right: 8, left: 8),
+                        child: Card(
+                          color: Colors.green[100],
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+
+                          margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => Categories()))
+                          //   },
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 6.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 210,
+                        width: 220,
+                        margin: EdgeInsets.only(right: 8, left: 8),
+                        child: Card(
+                          color: Colors.teal[100],
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+
+                          margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => Categories()))
+                          //   },
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 6.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 210,
+                        width: 220,
+                        margin: EdgeInsets.only(right: 8, left: 8),
+                        child: Card(
+                          color: Colors.lightGreen[100],
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+
+                          margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => Categories()))
+                          //   },
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 6.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 210,
+                        width: 220,
+                        margin: EdgeInsets.only(right: 8, left: 8),
+                        child: Card(
+                          color: Colors.purple[100],
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+
+                          margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => Categories()))
+                          //   },
+                          child: Icon(
+                            Icons.fastfood,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
-          Container(
-            height: 90,
-            decoration: BoxDecoration(color: Colors.lightBlue[100]),
-          ),
-          Container(
-            height: 90,
-            decoration: BoxDecoration(color: Colors.purple[100]),
-          ),
-          Container(
-            height: 90,
-            decoration: BoxDecoration(color: Colors.limeAccent[100]),
-          ),
-          Container(
-            height: 90,
-            decoration: BoxDecoration(color: Colors.yellow[100]),
-          ),
-          Container(
-            height: 90,
-            decoration: BoxDecoration(color: Colors.green[100]),
-          ),
-          Container(
-            height: 90,
-            decoration: BoxDecoration(color: Colors.blue[100]),
-          ),
-          Container(
-            height: 90,
-            decoration: BoxDecoration(color: Colors.red[100]),
-          ),
-          Container(
-            height: 90,
-            decoration: BoxDecoration(color: Colors.orange[100]),
-          )
         ]),
       ),
     );
