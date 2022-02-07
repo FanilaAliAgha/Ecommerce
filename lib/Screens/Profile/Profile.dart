@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:newapp/Screens/bottomnav.dart';
 
@@ -17,10 +19,11 @@ class Profile extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 20),
+            // ignore: sized_box_for_whitespace
             Container(
               height: 40,
               child: Text(
-                "Profile",
+                "PROFILE",
                 style: TextStyle(
                     color: Colors.purple[800],
                     fontSize: 26,

@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:newapp/Screens/Dashboard/Profile/Profile.dart';
-import 'package:newapp/constants.dart';
+import 'package:newapp/Screens/Profile/Profile.dart';
 
 class Nav extends StatelessWidget {
   const Nav({Key? key}) : super(key: key);
@@ -77,16 +76,17 @@ class Nav extends StatelessWidget {
                   Icons.person,
                   color: Colors.purple[800],
                 ),
-                onPressed: (){ // Navigator.pop(context);
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return Profile();
-                            },
-                          ),
-                        );
+                onPressed: () {
+                  // Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return Profile();
                       },
+                    ),
+                  );
+                },
               ),
             ],
           ),
