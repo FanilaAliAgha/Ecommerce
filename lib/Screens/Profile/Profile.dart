@@ -30,8 +30,19 @@ class Profile extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            Image.asset("assets/verify"),
-            // CircleAvatar()
+            Container(
+              height: 600,
+              decoration: BoxDecoration(color: Colors.pink[200]),
+              child: Center(
+                child: ClipOval(
+                    child: Image.asset(
+                  "assets/image.jpg",
+                  height: 300,
+                  width: 300,
+                  fit: BoxFit.cover,
+                )),
+              ),
+            ),
           ],
         ),
       ),
