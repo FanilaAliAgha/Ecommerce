@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:newapp/Screens/Dashboard/dashboard.dart';
 import 'package:newapp/Screens/Profile/Profile.dart';
 
 class Nav extends StatelessWidget {
@@ -28,7 +29,17 @@ class Nav extends StatelessWidget {
                   Icons.bungalow_sharp,
                   color: Colors.purple[800],
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  // Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return Dashboard();
+                      },
+                    ),
+                  );
+                },
               ),
               SizedBox(
                 width: 10,

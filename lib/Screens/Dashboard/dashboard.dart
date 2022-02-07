@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 import 'package:flutter/material.dart';
+import 'package:newapp/Screens/ProductDetail/productdetail.dart';
+import 'package:newapp/Screens/YourCart/cart.dart';
 import 'package:newapp/Screens/bottomnav.dart';
+import 'package:newapp/constants.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -68,17 +71,25 @@ class Dashboard extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25),
                     ),
-                    child: Icon(
-                      Icons.shopping_cart,
-                    ),
+                    child: GestureDetector(
+                      onTap: () => {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => YourCartpg()))
+                      },
+                      child: Icon(
+                        Icons.shopping_cart,
+                      ),
 
-                    // child: TextFormField(
-                    //   decoration: InputDecoration(
-                    //     prefixIcon: Icon(
-                    //       Icons.shopping_cart,
-                    //     ),
-                    //   ),
-                    // ),
+                      // child: TextFormField(
+                      //   decoration: InputDecoration(
+                      //     prefixIcon: Icon(
+                      //       Icons.shopping_cart,
+                      //     ),
+                      //   ),
+                      // ),
+                    ),
                   ),
                 ),
                 Container(
@@ -177,23 +188,33 @@ class Dashboard extends StatelessWidget {
                         height: 100,
                         width: 100,
                         child: Card(
-                          elevation: 3,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          margin: EdgeInsets.all(10),
-                          // child: GestureDetector(
-                          //   onTap: () => {
-                          //     Navigator.push(
-                          //         context,
-                          //         MaterialPageRoute(
-                          //             builder: (context) => Categories()))
-                          //   },
-                          child: Icon(
-                            Icons.fastfood,
-                          ),
-                        ),
+                            elevation: 3,
+                            color: kPrimaryLightColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            margin: EdgeInsets.all(10),
+                            // child: GestureDetector(
+                            //   onTap: () => {
+                            //     Navigator.push(
+                            //         context,
+                            //         MaterialPageRoute(
+                            //             builder: (context) => Categories()))
+                            //   },
+                            // child: Opacity(
+                            //   opacity: 0.5,
+                            //   child: Image.asset("assets/product1.jpg",
+                            //       fit: BoxFit.cover),
+                            // )),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Image.asset(
+                                "assets/new.png",
+                                height: 10,
+                              ),
+                            )),
                       ),
+                      // ),
                       // ),
                       Text(
                         'New In',
@@ -211,15 +232,13 @@ class Dashboard extends StatelessWidget {
                         height: 100,
                         width: 100,
                         child: Card(
-                          elevation: 3,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          margin: EdgeInsets.all(10),
-                          child: Icon(
-                            Icons.fastfood,
-                          ),
-                        ),
+                            elevation: 3,
+                            color: kPrimaryLightColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            margin: EdgeInsets.all(10),
+                            child: Icon(Icons.food_bank)),
                       ),
                       Text(
                         'Man',
@@ -237,6 +256,7 @@ class Dashboard extends StatelessWidget {
                         height: 100,
                         width: 100,
                         child: Card(
+                          color: kPrimaryLightColor,
                           elevation: 3,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
@@ -263,6 +283,7 @@ class Dashboard extends StatelessWidget {
                         height: 100,
                         width: 100,
                         child: Card(
+                          color: kPrimaryLightColor,
                           elevation: 3,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
@@ -289,6 +310,7 @@ class Dashboard extends StatelessWidget {
                         height: 100,
                         width: 100,
                         child: Card(
+                          color: kPrimaryLightColor,
                           elevation: 3,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
@@ -315,6 +337,7 @@ class Dashboard extends StatelessWidget {
                         height: 100,
                         width: 100,
                         child: Card(
+                          color: kPrimaryLightColor,
                           elevation: 3,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
@@ -341,6 +364,7 @@ class Dashboard extends StatelessWidget {
                         height: 100,
                         width: 100,
                         child: Card(
+                          color: kPrimaryLightColor,
                           elevation: 3,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
@@ -395,19 +419,27 @@ class Dashboard extends StatelessWidget {
                           color: Colors.yellow[50],
                           elevation: 3,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
+                            borderRadius: BorderRadius.circular(25),
                           ),
-
                           margin: EdgeInsets.all(10),
-                          // child: GestureDetector(
-                          //   onTap: () => {
-                          //     Navigator.push(
-                          //         context,
-                          //         MaterialPageRoute(
-                          //             builder: (context) => Categories()))
-                          //   },
-                          child: Icon(
-                            Icons.fastfood,
+                          child: GestureDetector(
+                            onTap: () => {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Productdetail()))
+                            },
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(30),
+                                child: Opacity(
+                                  opacity: 0.5,
+                                  child: Image.asset(
+                                    "assets/product2.jpg",
+                                    height: 170,
+                                    width: 280,
+                                    fit: BoxFit.cover,
+                                  ),
+                                )),
                           ),
                         ),
                       ),
