@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 import 'package:flutter/material.dart';
+import 'package:newapp/Screens/New/new_pg.dart';
+import 'package:newapp/Screens/Notification/notification.dart';
 import 'package:newapp/Screens/ProductDetail/productdetail.dart';
 import 'package:newapp/Screens/YourCart/cart.dart';
 import 'package:newapp/Screens/bottomnav.dart';
@@ -23,14 +25,28 @@ class Dashboard extends StatelessWidget {
           SizedBox(height: 10),
           Container(
             height: 40,
-            child: Center(
-              child: Text(
-                "SAPPHIRE",
-                style: TextStyle(
-                    color: Colors.purple[800],
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22),
-              ),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 110, left: 160),
+                  child: Text(
+                    "SAPPHIRE",
+                    style: TextStyle(
+                        color: Colors.purple[800],
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22),
+                  ),
+                ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(450),
+                  child: Image.asset(
+                    "assets/profileimg.jpg",
+                    height: 43,
+                    width: 43,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ],
             ),
           ),
           Container(
@@ -103,17 +119,25 @@ class Dashboard extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25),
                     ),
-                    child: Icon(Icons.notifications),
+                    child: GestureDetector(
+                      onTap: () => {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Notification_pg()))
+                      },
+                      child: Icon(Icons.notifications),
 
-                    // child: TextFormField(
-                    //   decoration: InputDecoration(
-                    //     prefixIcon: Icon(
-                    //       Icons.shopping_cart,
-                    //     ),
-                    //   ),
-                    // ),
+                      // child: TextFormField(
+                      //   decoration: InputDecoration(
+                      //     prefixIcon: Icon(
+                      //       Icons.shopping_cart,
+                      //     ),
+                      //   ),
+                      // ),
+                    ),
                   ),
-                ),
+                )
               ],
             ),
           ),
@@ -188,33 +212,42 @@ class Dashboard extends StatelessWidget {
                         height: 100,
                         width: 100,
                         child: Card(
-                            elevation: 3,
-                            color: kPrimaryLightColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            margin: EdgeInsets.all(10),
-                            // child: GestureDetector(
-                            //   onTap: () => {
-                            //     Navigator.push(
-                            //         context,
-                            //         MaterialPageRoute(
-                            //             builder: (context) => Categories()))
-                            //   },
-                            // child: Opacity(
-                            //   opacity: 0.5,
-                            //   child: Image.asset("assets/product1.jpg",
-                            //       fit: BoxFit.cover),
-                            // )),
+                          elevation: 3,
+                          color: kPrimaryLightColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => new_pg())),
+                          //   },
+                          // // child: Opacity(
+                          // //   opacity: 0.5,
+                          // //   child: Image.asset("assets/product1.jpg",
+                          // //       fit: BoxFit.cover),
+                          // // )
+                          // ),
+                          child: GestureDetector(
+                            onTap: () => {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => new_pg()))
+                            },
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Image.asset(
                                 "assets/new.png",
                                 height: 10,
                               ),
-                            )),
+                            ),
+                          ),
+                        ),
                       ),
-                      // ),
                       // ),
                       Text(
                         'New In',
@@ -343,11 +376,19 @@ class Dashboard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15),
                           ),
                           margin: EdgeInsets.all(10),
+                          // child: GestureDetector(
+                          //   onTap: () => {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => new_pg()))
+                          //   },
                           child: Icon(
                             Icons.fastfood,
                           ),
                         ),
                       ),
+                      // ),
                       Text(
                         'Beauty',
                         style: TextStyle(
@@ -430,16 +471,17 @@ class Dashboard extends StatelessWidget {
                                       builder: (context) => Productdetail()))
                             },
                             child: ClipRRect(
-                                borderRadius: BorderRadius.circular(30),
-                                child: Opacity(
-                                  opacity: 0.5,
-                                  child: Image.asset(
-                                    "assets/product2.jpg",
-                                    height: 170,
-                                    width: 280,
-                                    fit: BoxFit.cover,
-                                  ),
-                                )),
+                              borderRadius: BorderRadius.circular(30),
+                              child: Opacity(
+                                opacity: 0.5,
+                                child: Image.asset(
+                                  "assets/product2.jpg",
+                                  height: 170,
+                                  width: 280,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -462,7 +504,7 @@ class Dashboard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15),
                           ),
 
-                          margin: EdgeInsets.all(10),
+                          // margin: EdgeInsets.all(10),
                           // child: GestureDetector(
                           //   onTap: () => {
                           //     Navigator.push(
@@ -475,6 +517,7 @@ class Dashboard extends StatelessWidget {
                           ),
                         ),
                       ),
+                      // ),
                     ],
                   ),
                 ),

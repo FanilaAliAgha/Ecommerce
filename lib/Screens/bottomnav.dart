@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:newapp/Screens/Dashboard/dashboard.dart';
 import 'package:newapp/Screens/Profile/Profile.dart';
+import 'package:newapp/Screens/Task/task.dart';
 
 class Nav extends StatelessWidget {
   const Nav({Key? key}) : super(key: key);
@@ -41,63 +42,86 @@ class Nav extends StatelessWidget {
                   );
                 },
               ),
-              SizedBox(
-                width: 10,
+              // SizedBox(
+              //   width: 10,
+              // ),
+              // SizedBox(
+              //   width: 30,
+              // ),
+              // SizedBox(
+              //   width: 20,
+              // ),
+
+              Spacer(),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: IconButton(
+                  icon: Icon(
+                    Icons.task,
+                    color: Colors.purple[800],
+                  ),
+                  onPressed: () {
+                    // Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return Task_pg();
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ),
+              // SizedBox(
+              //   width: 10,
+              // ),
+              // SizedBox(
+              //   width: 30,
+              // ),
+              // SizedBox(
+              //   width: 20,
+              // ),
+              // IconButton(
+              //   icon: Icon(
+              //     Icons.turned_in,
+              //     color: Colors.purple[800],
+              //   ),
+              //   onPressed: () {},
+              // ),
+              // SizedBox
+              // (
+              //   width: 10,
+              // ),
+              // SizedBox(
+              //   width: 20,
+              // ),
+              // SizedBox(
+              //   width: 30,
+              // ),
+              Spacer(),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: IconButton(
+                  icon: Icon(
+                    Icons.person,
+                    color: Colors.purple[800],
+                  ),
+                  onPressed: () {
+                    // Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return Profile();
+                        },
+                      ),
+                    );
+                  },
+                ),
               ),
               SizedBox(
                 width: 30,
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.person,
-                  color: Colors.purple[800],
-                ),
-                onPressed: () {},
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.turned_in,
-                  color: Colors.purple[800],
-                ),
-                onPressed: () {},
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.person,
-                  color: Colors.purple[800],
-                ),
-                onPressed: () {
-                  // Navigator.pop(context);
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return Profile();
-                      },
-                    ),
-                  );
-                },
               ),
             ],
           ),
